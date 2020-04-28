@@ -11,6 +11,7 @@ public class UIFlickEffect : UIEffect
 
     public IEnumerator FlickEffect()
     {
+        isRunningEffect = true;
         int repeatCount = 0, direction = 1;
         float elapsedTime = (startAlphaValue > 0.0f) ? ((coroutineOption.x + coroutineOption.y) / startAlphaValue) : 0.0f;
 
@@ -28,6 +29,7 @@ public class UIFlickEffect : UIEffect
         }
 
         StartChainOtherEffect();
+        isRunningEffect = false;
         yield return null;
     }
 

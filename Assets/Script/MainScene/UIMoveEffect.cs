@@ -6,6 +6,7 @@ public class UIMoveEffect : UIEffect
 {
     IEnumerator MoveEffect()
     {
+        isRunningEffect = true;
         float elapsedTime = 0.0f;
         Vector2 startPos = transform.localPosition;
 
@@ -13,12 +14,12 @@ public class UIMoveEffect : UIEffect
         {
             elapsedTime = Mathf.Min(1.0f, elapsedTime + Time.deltaTime * effectSpeed);
             transform.localPosition = Vector2.Lerp(startPos, coroutineOption, elapsedTime);
-
-            Debug.Log(elapsedTime);
+            
             yield return null;
         }
 
         StartChainOtherEffect();
+        isRunningEffect = false;
         yield return null;
     }
 

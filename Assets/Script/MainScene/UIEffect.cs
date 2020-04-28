@@ -6,19 +6,18 @@ public enum EffectType { Move, Flick };
 
 public class UIEffect : MonoBehaviour
 {
+    public bool isRunningEffect = false;
     public bool effectAtStartScene = false;
     public float effectSpeed = 1.0f;
     public UIEffect[] chainOtherEffectObjects;
     public Vector2 coroutineOption;
    
-    // Start is called before the first frame update
     void Start()
     {
         SetBeforeStartScene();
 
         if (effectAtStartScene)
         {
-            Debug.Log("?");
             StartEffect();
         }
     }
@@ -32,4 +31,5 @@ public class UIEffect : MonoBehaviour
     }
     virtual public void SetBeforeStartScene() { }
     virtual public void StartEffect() { }
+    virtual public bool IsEndEffect() { return isRunningEffect; }
 }
