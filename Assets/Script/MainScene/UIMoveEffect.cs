@@ -19,6 +19,8 @@ public class UIMoveEffect : UIEffect
         }
 
         StartChainOtherEffect();
+        StartChainedFunction();
+
         isRunningEffect = false;
         yield return null;
     }

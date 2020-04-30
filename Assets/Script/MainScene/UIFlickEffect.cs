@@ -29,6 +29,8 @@ public class UIFlickEffect : UIEffect
         }
 
         StartChainOtherEffect();
+        StartChainedFunction();
+
         isRunningEffect = false;
         yield return null;
     }

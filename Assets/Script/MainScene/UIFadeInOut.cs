@@ -24,21 +24,15 @@ public class UIFadeInOut : UIEffect
         }
 
         StartChainOtherEffect();
+        StartChainedFunction();
+
         isRunningEffect = false;
         yield return null;
     }
 
     override public void SetBeforeStartScene()
     {
-        objectColor = GetComponent<Image>().color;
-        objectColor.a = fadeType == FadeType.FadeOut ? 0.0f : 1.0f;
-
-        GetComponent<Image>().color = objectColor;
         GetComponent<RectTransform>().sizeDelta = new Vector2(Screen.width, Screen.height);
-
-        coroutineOption = new Vector2(objectColor.a, 1.0f - objectColor.a);
-
-        Debug.Log(new Vector2(Screen.width, Screen.height));
     }
 
     override public void StartEffect()
