@@ -6,15 +6,30 @@ using UnityEditor;
 
 static public class MapEditor {
 
+    static bool initialized = false;
     static public float MAP_OFFSET = 1.2f;
-    static public int MAX_STAGE = 2;
+    static public int MAX_STAGE = -1;
     static Dictionary<int, string[]> m_mapdata;
+
+    static public int StageCount
+    {
+        get {
+            if(!initialized)
+            {
+                SetMapData();
+            }
+            return MAX_STAGE;
+        }
+    }
 
     static public void SetMapData()
     {
+        if (initialized)
+        {
+            return;
+        }
         System.IO.DirectoryInfo di = new System.IO.DirectoryInfo(".\\Assets\\MapData\\");
         System.IO.FileInfo[] fis = di.GetFiles("*.txt");
-
 
         MapEditor.MAX_STAGE = fis.Length;
 
@@ -42,6 +57,8 @@ static public class MapEditor {
             if(tmpDatas.Count != 0)
                 m_mapdata[i + 1] = tmpDatas.ToArray();
         }
+
+        initialized = true;
     }
 
     static public string[] GetMapdata(int n)

@@ -775,7 +775,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1687857710}
-  - component: {fileID: 1687857711}
+  - component: {fileID: 1687857712}
   m_Layer: 0
   m_Name: SceneManager
   m_TagString: Untagged
@@ -797,7 +797,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1687857711
+--- !u!114 &1687857712
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -806,12 +806,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1687857709}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 322aa6c65a1c9334a97b8f3e576c6c0d, type: 3}
+  m_Script: {fileID: 11500000, guid: f9f9c4a3240222c4f97d36efb22591e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   nowSceneType: 0
   nextSceneType: 1
   uiFadeObject: {fileID: 139712521}
+  uiEffects: []
 --- !u!1 &2025792401
 GameObject:
   m_ObjectHideFlags: 0

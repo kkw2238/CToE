@@ -8,26 +8,11 @@ public class SceneManagement : MonoBehaviour
     public UIFadeInOut uiFadeObject;
     public List<UIEffect> uiEffects;
 
-    private void Start()
-    {
-        uiFadeObject.SetCoroutineOption(new Vector2(1.0f, 0.0f));
-    }
-
-    public void Update()
-    {
-        if(Input.anyKeyDown && uiFadeObject.IsEndEffect())
-        {
-            BeforeChangeScene();
-            Debug.Log("1");
-        }
-    }
-
-    private void BeforeChangeScene()
+    protected void BeforeChangeScene()
     {
         uiFadeObject.AddChainFunction(ChangeScene);
         uiFadeObject.SetCoroutineOption(new Vector2(0.0f, 1.0f));
         uiFadeObject.StartEffect();
-
     }
 
     public void ChangeScene()

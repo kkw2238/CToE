@@ -28,6 +28,11 @@ public class UIEffect : MonoBehaviour
 
     protected void StartChainOtherEffect()
     {
+        if (chainOtherEffectObjects.Count == 0)
+        {
+            return;
+        }
+
         foreach (UIEffect uiobject in chainOtherEffectObjects)
         {
             uiobject.StartEffect();
